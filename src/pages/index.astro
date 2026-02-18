@@ -1,11 +1,139 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+	<nav>
+		<span class="logo">Sotavento Labs</span>
+	</nav>
+
+	<main>
+		<section class="hero">
+			<h1>Technology consulting for teams that build.</h1>
+			<p class="subtitle">
+				We help engineering teams ship better software — from architecture and
+				infrastructure to hands-on delivery.
+			</p>
+			<a href="mailto:hello@sotaventolabs.eu" class="cta">Get in touch</a>
+		</section>
+	</main>
+
+	<footer>
+		<div class="footer-content">
+			<span>&copy; {new Date().getFullYear()} Sotavento Labs</span>
+			<a href="mailto:hello@sotaventolabs.eu">hello@sotaventolabs.eu</a>
+		</div>
+	</footer>
 </Layout>
+
+<style>
+	nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 1.5rem 3rem;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 10;
+		background: rgba(251, 251, 253, 0.8);
+		backdrop-filter: blur(12px);
+		-webkit-backdrop-filter: blur(12px);
+	}
+
+	.logo {
+		font-size: 1rem;
+		font-weight: 600;
+		letter-spacing: -0.02em;
+		color: #1d1d1f;
+	}
+
+	main {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+
+	.hero {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 100vh;
+		padding: 6rem 3rem;
+		max-width: 800px;
+	}
+
+	h1 {
+		font-size: clamp(2.5rem, 5vw, 3.5rem);
+		font-weight: 600;
+		letter-spacing: -0.03em;
+		line-height: 1.1;
+		color: #1d1d1f;
+	}
+
+	.subtitle {
+		margin-top: 1.5rem;
+		font-size: clamp(1.1rem, 2vw, 1.3rem);
+		line-height: 1.6;
+		color: #86868b;
+		max-width: 600px;
+	}
+
+	.cta {
+		display: inline-block;
+		margin-top: 2.5rem;
+		padding: 0.75rem 1.75rem;
+		font-size: 1rem;
+		font-weight: 500;
+		color: #ffffff;
+		background: #1d1d1f;
+		border-radius: 8px;
+		transition: opacity 0.2s;
+		width: fit-content;
+	}
+
+	.cta:hover {
+		opacity: 0.85;
+	}
+
+	footer {
+		border-top: 1px solid #e0e0e0;
+		padding: 2rem 3rem;
+	}
+
+	.footer-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-size: 0.875rem;
+		color: #86868b;
+	}
+
+	.footer-content a {
+		transition: color 0.2s;
+	}
+
+	.footer-content a:hover {
+		color: #1d1d1f;
+	}
+
+	@media (max-width: 640px) {
+		nav {
+			padding: 1.25rem 1.5rem;
+		}
+
+		.hero {
+			padding: 6rem 1.5rem;
+		}
+
+		footer {
+			padding: 1.5rem;
+		}
+
+		.footer-content {
+			flex-direction: column;
+			gap: 0.5rem;
+		}
+	}
+</style>
