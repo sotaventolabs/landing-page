@@ -344,10 +344,9 @@ import Layout from '../layouts/Layout.astro';
   /* ─── HERO ─── */
   .hero {
     min-height: 100vh;
-    background: var(--white);
     padding-top: var(--nav-h);
     display: flex;
-    align-items: center;
+    align-items: stretch;
   }
 
   .hero-grid {
@@ -355,16 +354,23 @@ import Layout from '../layouts/Layout.astro';
     grid-template-columns: 1fr 1px 1fr;
     width: 100%;
     min-height: calc(100vh - var(--nav-h));
-    align-items: center;
+    align-items: stretch;
   }
 
   .hero-sep {
     background: #e4e4e7;
-    align-self: stretch;
     margin: 6rem 0;
   }
 
-  .hero-block { padding: 4rem 3rem; }
+  .hero-block {
+    padding: 8rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-a { background: var(--white); }
+  .hero-b { background: var(--zinc-100); }
 
   .hero-a h1 {
     font-size: clamp(2rem, 3.5vw, 3rem);
@@ -376,8 +382,6 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .hero-b {
-    display: flex;
-    flex-direction: column;
     gap: 1.25rem;
   }
 
@@ -430,8 +434,9 @@ import Layout from '../layouts/Layout.astro';
 
   /* ─── PROBLEM ─── */
   .problem {
-    background: var(--zinc-100);
+    background: #3f3f46;
     padding: 8rem 3rem;
+    color: var(--white);
   }
 
   .section-wrap {
@@ -442,13 +447,17 @@ import Layout from '../layouts/Layout.astro';
     gap: 1.25rem;
   }
 
+  .problem .eyebrow { color: var(--zinc-400); }
+
   .problem h2 {
     font-size: clamp(1.4rem, 2.5vw, 2.1rem);
     font-weight: 600;
     letter-spacing: -0.03em;
     line-height: 1.2;
-    color: var(--ink);
+    color: var(--white);
   }
+
+  .problem .body-text { color: var(--zinc-400); }
 
   /* ─── SOLUTION ─── */
   .solution {
@@ -697,7 +706,7 @@ import Layout from '../layouts/Layout.astro';
       grid-template-columns: 1fr;
     }
     .hero-sep { display: none; }
-    .hero-block { padding: 3rem 2rem; }
+    .hero-block { padding: 5rem 2rem; }
     .hero-a h1 { font-size: clamp(2rem, 5vw, 2.5rem); }
     .pillars {
       grid-template-columns: 1fr;
