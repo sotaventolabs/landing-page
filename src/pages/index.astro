@@ -6,10 +6,7 @@ import Layout from '../layouts/Layout.astro';
   <!-- NAVIGATION -->
   <nav id="navbar">
     <a href="/" class="logo">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true">
-        <polygon points="12 2 22 7 22 17 12 22 2 17 2 7" />
-      </svg>
-      Sotavento Labs
+      <img src="/logo.png" alt="Sotavento Labs" class="logo-img" />
     </a>
     <div class="nav-right">
       <a href="/about.html" class="nav-link">About Us</a>
@@ -295,12 +292,14 @@ import Layout from '../layouts/Layout.astro';
   .logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    font-size: 0.975rem;
-    font-weight: 600;
-    letter-spacing: -0.02em;
     color: inherit;
     text-decoration: none;
+  }
+
+  .logo-img {
+    height: 32px;
+    width: auto;
+    display: block;
   }
 
   .nav-right {
