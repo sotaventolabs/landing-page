@@ -345,7 +345,7 @@ import Layout from '../layouts/Layout.astro';
   /* ─── HERO-A ─── */
   .hero-a {
     background: var(--white);
-    padding: calc(var(--nav-h) + 8rem) 2cm 8rem;
+    padding: calc(var(--nav-h) + 8rem) 3rem 8rem;
   }
 
   .hero-a h1 {
@@ -360,7 +360,7 @@ import Layout from '../layouts/Layout.astro';
   /* ─── HERO-B ─── */
   .hero-b {
     background: var(--zinc-100);
-    padding: 8rem 2cm;
+    padding: 8rem 3rem;
   }
 
   .hero-b h2 {
@@ -389,6 +389,7 @@ import Layout from '../layouts/Layout.astro';
     line-height: 1.7;
     color: var(--zinc-600);
     max-width: 48ch;
+    padding: 0 3rem;
   }
   .body-text.muted { color: var(--zinc-400); }
   .body-text.justified { text-align: justify; }
@@ -413,7 +414,7 @@ import Layout from '../layouts/Layout.astro';
   /* ─── PROBLEM ─── */
   .problem {
     background: #3f3f46;
-    padding: 8rem 2cm;
+    padding: 8rem 3rem;
     color: var(--white);
   }
 
@@ -440,7 +441,7 @@ import Layout from '../layouts/Layout.astro';
   /* ─── SOLUTION ─── */
   .solution {
     background: var(--black);
-    padding: 8rem 2cm;
+    padding: 8rem 3rem;
     color: var(--white);
   }
 
@@ -688,10 +689,11 @@ import Layout from '../layouts/Layout.astro';
 
   @media (max-width: 640px) {
     #navbar { padding: 0 1.5rem; }
-    .hero-a { padding: calc(var(--nav-h) + 5rem) 2cm 5rem; }
+    .hero-a { padding: calc(var(--nav-h) + 5rem) 1.5rem 5rem; }
     .hero-b,
     .problem,
-    .solution { padding: 5rem 2cm; }
+    .solution { padding: 5rem 1.5rem; }
+    .body-text { padding: 0 1.5rem; }
     footer { padding: 1.5rem; }
     .footer-inner {
       flex-direction: column;
