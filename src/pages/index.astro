@@ -18,27 +18,28 @@ import Layout from '../layouts/Layout.astro';
   </nav>
 
   <main>
-    <!-- 1. HERO — White -->
-    <section id="hero" class="hero">
-      <div class="hero-grid">
-        <section class="hero-block hero-a">
-          <h1>Technology consulting<br />for teams that build.</h1>
-          <p class="body-text">
-            We help engineering teams ship better software — from architecture and
-            infrastructure to hands-on delivery.
-          </p>
-          <button class="open-modal btn-primary">Get in touch →</button>
-        </section>
-        <div class="hero-sep" aria-hidden="true"></div>
-        <section class="hero-block hero-b">
-          <span class="eyebrow">ANALYSIS GAP FOR ISAE 3000</span>
-          <h2>Your Audit Window Is Fixed.<br />Your Evidence Gap Isn't.</h2>
-          <p class="body-text justified">
-            Sotavento Labs builds the continuous, verifiable control record that
-            ISAE 3000 Type II requires — so when your auditor arrives, the evidence
-            is already there.
-          </p>
-        </section>
+    <!-- 1. HERO-A — White -->
+    <section id="hero" class="hero-a">
+      <div class="section-wrap">
+        <h1>Technology consulting<br />for teams that build.</h1>
+        <p class="body-text">
+          We help engineering teams ship better software — from architecture and
+          infrastructure to hands-on delivery.
+        </p>
+        <button class="open-modal btn-primary">Get in touch →</button>
+      </div>
+    </section>
+
+    <!-- 2. HERO-B — Soft Grey -->
+    <section id="isae" class="hero-b">
+      <div class="section-wrap">
+        <span class="eyebrow">ANALYSIS GAP FOR ISAE 3000</span>
+        <h2>Your Audit Window Is Fixed.<br />Your Evidence Gap Isn't.</h2>
+        <p class="body-text justified">
+          Sotavento Labs builds the continuous, verifiable control record that
+          ISAE 3000 Type II requires — so when your auditor arrives, the evidence
+          is already there.
+        </p>
       </div>
     </section>
 
@@ -183,7 +184,7 @@ import Layout from '../layouts/Layout.astro';
 
     gsap.registerPlugin(ScrollTrigger);
 
-    document.querySelectorAll('.hero-block, .section-wrap, .pillar').forEach((el) => {
+    document.querySelectorAll('.hero-a, .hero-b, .section-wrap, .pillar').forEach((el) => {
       gsap.from(el, {
         opacity: 0,
         y: 30,
@@ -341,36 +342,11 @@ import Layout from '../layouts/Layout.astro';
     border-color: var(--white);
   }
 
-  /* ─── HERO ─── */
-  .hero {
-    min-height: 100vh;
-    padding-top: var(--nav-h);
-    display: flex;
-    align-items: stretch;
+  /* ─── HERO-A ─── */
+  .hero-a {
+    background: var(--white);
+    padding: calc(var(--nav-h) + 8rem) 3rem 8rem;
   }
-
-  .hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 1px 1fr;
-    width: 100%;
-    min-height: calc(100vh - var(--nav-h));
-    align-items: stretch;
-  }
-
-  .hero-sep {
-    background: #e4e4e7;
-    margin: 6rem 0;
-  }
-
-  .hero-block {
-    padding: 8rem 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .hero-a { background: var(--white); }
-  .hero-b { background: var(--zinc-100); }
 
   .hero-a h1 {
     font-size: clamp(2rem, 3.5vw, 3rem);
@@ -381,8 +357,10 @@ import Layout from '../layouts/Layout.astro';
     margin-bottom: 1.5rem;
   }
 
+  /* ─── HERO-B ─── */
   .hero-b {
-    gap: 1.25rem;
+    background: var(--zinc-100);
+    padding: 8rem 3rem;
   }
 
   .hero-b h2 {
@@ -702,12 +680,6 @@ import Layout from '../layouts/Layout.astro';
 
   /* ─── RESPONSIVE ─── */
   @media (max-width: 960px) {
-    .hero-grid {
-      grid-template-columns: 1fr;
-    }
-    .hero-sep { display: none; }
-    .hero-block { padding: 5rem 2rem; }
-    .hero-a h1 { font-size: clamp(2rem, 5vw, 2.5rem); }
     .pillars {
       grid-template-columns: 1fr;
       max-width: 600px;
@@ -716,6 +688,8 @@ import Layout from '../layouts/Layout.astro';
 
   @media (max-width: 640px) {
     #navbar { padding: 0 1.5rem; }
+    .hero-a { padding: calc(var(--nav-h) + 5rem) 1.5rem 5rem; }
+    .hero-b,
     .problem,
     .solution { padding: 5rem 1.5rem; }
     footer { padding: 1.5rem; }
