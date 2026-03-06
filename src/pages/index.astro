@@ -169,7 +169,7 @@ import Layout from '../layouts/Layout.astro';
   <footer>
     <div class="footer-inner">
       <span>&copy; {new Date().getFullYear()} Sotavento Labs</span>
-      <a href="mailto:hello@sotaventolabs.com">hello@sotaventolabs.com</a>
+      <a href="mailto:hello@sotaventolabs.eu">hello@sotaventolabs.eu</a>
     </div>
   </footer>
 
@@ -238,7 +238,7 @@ import Layout from '../layouts/Layout.astro';
       e.preventDefault();
       const subject = encodeURIComponent('Inquiry from ' + form.company.value);
       const body = encodeURIComponent('From: ' + form.email.value + '\n\n' + form.message.value);
-      window.open('mailto:hello@sotaventolabs.com?subject=' + subject + '&body=' + body, '_blank');
+      window.open('mailto:hello@sotaventolabs.eu?subject=' + subject + '&body=' + body, '_blank');
 
       submitBtn.textContent = 'Sent!';
       submitBtn.classList.add('is-sent');
