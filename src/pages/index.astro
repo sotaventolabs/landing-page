@@ -4,7 +4,10 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout>
 	<nav>
-		<span class="logo">Sotavento Labs</span>
+		<a href="/" class="logo">
+			<img src="/logo.png" alt="" class="logo-img" />
+			Sotavento Labs
+		</a>
 	</nav>
 
 	<main>
@@ -43,10 +46,20 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.logo {
-		font-size: 1rem;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		font-size: 0.975rem;
 		font-weight: 600;
 		letter-spacing: -0.02em;
-		color: #1d1d1f;
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.logo-img {
+		height: 32px;
+		width: auto;
+		display: block;
 	}
 
 	main {
