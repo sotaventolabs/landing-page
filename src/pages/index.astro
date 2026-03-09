@@ -24,7 +24,10 @@ import Layout from '../layouts/Layout.astro';
 	<footer>
 		<div class="footer-content">
 			<span>&copy; {new Date().getFullYear()} Sotavento Labs</span>
-			<a href="mailto:hello@sotaventolabs.eu">hello@sotaventolabs.eu</a>
+			<div class="footer-contacts">
+				<a href="mailto:hello@sotaventolabs.eu">hello@sotaventolabs.eu</a>
+				<a href="tel:+34696438693">+34 696 438 693</a>
+			</div>
 		</div>
 	</footer>
 </Layout>
@@ -121,6 +124,11 @@ import Layout from '../layouts/Layout.astro';
 		align-items: center;
 		font-size: 0.875rem;
 		color: #86868b;
+	}
+
+	.footer-contacts {
+		display: flex;
+		gap: 1.5rem;
 	}
 
 	.footer-content a {
