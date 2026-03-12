@@ -9,9 +9,6 @@ import Layout from '../layouts/Layout.astro';
       <img src="/logo.png" alt="" class="logo-img" />
       Sotavento Labs
     </a>
-    <div class="nav-right">
-      <button class="open-modal nav-cta">Contact</button>
-    </div>
   </nav>
 
   <main>
@@ -23,7 +20,6 @@ import Layout from '../layouts/Layout.astro';
           We help engineering teams ship better software — from architecture and
           infrastructure to hands-on delivery.
         </p>
-        <button class="open-modal btn-primary">Get in touch →</button>
       </div>
     </section>
 
@@ -114,44 +110,6 @@ import Layout from '../layouts/Layout.astro';
     </section>
   </main>
 
-  <!-- CONTACT MODAL -->
-  <div id="modal" class="modal-overlay" aria-hidden="true">
-    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <button id="close-modal" class="modal-close" aria-label="Close">
-        <i data-lucide="x"></i>
-      </button>
-      <h3 id="modal-title" class="modal-title">Get in touch</h3>
-      <form id="contact-form" novalidate>
-        <div class="field">
-          <input
-            type="text"
-            name="company"
-            placeholder="Acme Corp"
-            required
-            autocomplete="organization"
-          />
-        </div>
-        <div class="field">
-          <input
-            type="email"
-            name="email"
-            placeholder="hello@acmecorp.com"
-            required
-            autocomplete="email"
-          />
-        </div>
-        <div class="field">
-          <textarea
-            name="message"
-            rows="4"
-            placeholder="How can we help you?"
-          ></textarea>
-        </div>
-        <button type="submit" id="submit-btn" class="submit-btn">Send Message</button>
-      </form>
-    </div>
-  </div>
-
   <!-- LINKEDIN FLOATING BUTTON -->
   <a
     href="https://linkedin.com/company/sotavento-labs/"
@@ -206,48 +164,6 @@ import Layout from '../layouts/Layout.astro';
       ).observe(solutionEl);
     }
 
-    // Modal
-    const modal = document.getElementById('modal');
-    const closeBtn = document.getElementById('close-modal');
-    const form = document.getElementById('contact-form');
-    const submitBtn = document.getElementById('submit-btn');
-
-    const openModal = () => {
-      modal.removeAttribute('aria-hidden');
-      modal.classList.add('is-open');
-      document.body.style.overflow = 'hidden';
-    };
-
-    const closeModal = () => {
-      modal.setAttribute('aria-hidden', 'true');
-      modal.classList.remove('is-open');
-      document.body.style.overflow = '';
-    };
-
-    document.querySelectorAll('.open-modal').forEach((b) =>
-      b.addEventListener('click', openModal)
-    );
-    closeBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
-    });
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const subject = encodeURIComponent('Inquiry from ' + form.company.value);
-      const body = encodeURIComponent('From: ' + form.email.value + '\n\n' + form.message.value);
-      window.open('mailto:hello@sotaventolabs.eu?subject=' + subject + '&body=' + body, '_blank');
-
-      submitBtn.textContent = 'Sent!';
-      submitBtn.classList.add('is-sent');
-      setTimeout(() => {
-        closeModal();
-        form.reset();
-        submitBtn.textContent = 'Send Message';
-        submitBtn.classList.remove('is-sent');
-      }, 1500);
-    });
   </script>
 </Layout>
 
