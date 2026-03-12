@@ -2,14 +2,17 @@
 import Layout from '../../layouts/Layout.astro';
 ---
 
-<Layout title="ISAE 3000 Analysis Gap — Sotavento Labs">
+<Layout title="compl.ia — ISAE 3000 — Sotavento Labs">
   <!-- NAVIGATION -->
   <nav id="navbar">
     <a href="/" class="logo">
       <img src="/logo.png" alt="" class="logo-img" />
       Sotavento Labs
     </a>
-    <a href="/" class="back-link">← Back</a>
+    <div class="nav-right">
+      <span class="nav-product">compl.ia</span>
+      <a href="/#tools" class="back-link">← All tools</a>
+    </div>
   </nav>
 
   <main>
@@ -205,6 +208,19 @@ import Layout from '../../layouts/Layout.astro';
     height: 32px;
     width: auto;
     display: block;
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .nav-product {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: inherit;
   }
 
   .back-link {
