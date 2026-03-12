@@ -1,0 +1,415 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="ISAE 3000 Analysis Gap — Sotavento Labs">
+  <!-- NAVIGATION -->
+  <nav id="navbar">
+    <a href="/" class="logo">
+      <img src="/logo.png" alt="" class="logo-img" />
+      Sotavento Labs
+    </a>
+    <a href="/" class="back-link">← Back</a>
+  </nav>
+
+  <main>
+    <!-- HERO — Soft Grey -->
+    <section id="hero" class="hero">
+      <div class="section-wrap">
+        <span class="eyebrow">ANALYSIS GAP FOR ISAE 3000</span>
+        <h1>Your Audit Window Is Fixed.<br />Your Evidence Gap Isn't.</h1>
+        <p class="body-text justified">
+          Sotavento Labs builds the continuous, verifiable control record that
+          ISAE 3000 Type II requires — so when your auditor arrives, the evidence
+          is already there.
+        </p>
+      </div>
+    </section>
+
+    <!-- PROBLEM — Gray -->
+    <section id="problem" class="problem">
+      <div class="section-wrap">
+        <span class="eyebrow">THE CONSULTING MODEL PROBLEM</span>
+        <h2>Traditional Consulting Was Built for a Different Era of Compliance.</h2>
+        <p class="body-text justified">
+          ISAE 3000 Type II requires 12 months of continuous, verifiable control operation.
+          A 10-week consulting engagement cannot produce that — it can only describe it.
+          Auditors know the difference.
+        </p>
+      </div>
+    </section>
+
+    <!-- SOLUTION — Black -->
+    <section id="solution" class="solution">
+      <div class="section-wrap solution-intro">
+        <span class="eyebrow dim">HOW SOTAVENTO LABS WORKS</span>
+        <h2>Built for the Way ISAE 3000 Is Actually Audited.</h2>
+        <p class="body-text muted justified">
+          Three integrated capabilities that replace the consulting cycle with a
+          continuous, auditor-ready control record.
+        </p>
+      </div>
+      <div class="pillars">
+        <article class="pillar">
+          <span class="pillar-icon" aria-hidden="true">
+            <i data-lucide="activity"></i>
+          </span>
+          <h3>Continuous Evidence Capture</h3>
+          <p class="pillar-body">
+            Controls are documented at the moment they operate — not reconstructed
+            weeks before your audit window. System logs, access records, policy
+            acknowledgements, and operational artifacts are captured, timestamped,
+            and mapped automatically.
+          </p>
+          <p class="replaces">
+            What this replaces: Retrospective evidence assembly under deadline pressure.
+          </p>
+        </article>
+
+        <article class="pillar">
+          <span class="pillar-icon" aria-hidden="true">
+            <i data-lucide="git-merge"></i>
+          </span>
+          <h3>Criteria Mapping</h3>
+          <p class="pillar-body">
+            Every control is mapped to the ISAE 3000 framework and COSO domains — Control
+            Environment, Risk Assessment, Control Activities, Information &amp; Communication,
+            Monitoring. Gaps are surfaced before your auditor finds them.
+          </p>
+          <p class="replaces">
+            What this replaces: Manual gap analysis and consultant interpretation layers.
+          </p>
+        </article>
+
+        <article class="pillar">
+          <span class="pillar-icon" aria-hidden="true">
+            <i data-lucide="layout-dashboard"></i>
+          </span>
+          <h3>Practitioner Portal</h3>
+          <p class="pillar-body">
+            Your ISAE 3000 practitioner accesses a structured, evidence-linked readiness
+            view — no briefing cycles, no file transfers, no interpretation gaps. The
+            evidence speaks directly to the criteria.
+          </p>
+          <p class="replaces">
+            What this replaces: The consultant-as-translator layer between your technical
+            environment and the auditor.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- LINKEDIN FLOATING BUTTON -->
+  <a
+    href="https://linkedin.com/company/sotavento-labs/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="linkedin-fab"
+    aria-label="Sotavento Labs on LinkedIn"
+  >
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+    </svg>
+  </a>
+
+  <footer>
+    <div class="footer-inner">
+      <span>&copy; {new Date().getFullYear()} Sotavento Labs</span>
+      <a href="mailto:hello@sotaventolabs.eu">hello@sotaventolabs.eu</a>
+    </div>
+  </footer>
+
+  <script is:inline src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script is:inline>
+    lucide.createIcons();
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.querySelectorAll('.hero, .section-wrap, .pillar').forEach((el) => {
+      gsap.from(el, {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 85%',
+          toggleActions: 'play none none none',
+        },
+      });
+    });
+
+    const navbar = document.getElementById('navbar');
+    const solutionEl = document.getElementById('solution');
+
+    if (solutionEl) {
+      new IntersectionObserver(
+        ([e]) => navbar.classList.toggle('nav-dark', e.isIntersecting),
+        { threshold: 0.1 }
+      ).observe(solutionEl);
+    }
+  </script>
+</Layout>
+
+<style>
+  :root {
+    --white: #ffffff;
+    --zinc-100: #f4f4f5;
+    --zinc-400: #a1a1aa;
+    --zinc-500: #71717a;
+    --zinc-600: #52525b;
+    --zinc-800: #27272a;
+    --black: #000000;
+    --ink: #1d1d1f;
+    --nav-h: 72px;
+    --content-max-w: 680px;
+  }
+
+  /* ─── NAV ─── */
+  #navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    height: var(--nav-h);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: var(--ink);
+    transition: background 0.4s ease, color 0.4s ease;
+  }
+
+  #navbar.nav-dark {
+    background: rgba(0, 0, 0, 0.8);
+    color: var(--white);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.975rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .logo-img {
+    height: 32px;
+    width: auto;
+    display: block;
+  }
+
+  .back-link {
+    font-size: 0.875rem;
+    color: inherit;
+    opacity: 0.65;
+    transition: opacity 0.2s;
+  }
+  .back-link:hover { opacity: 1; }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--zinc-100);
+    padding: calc(var(--nav-h) + 8rem) 3rem 8rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    color: var(--ink);
+  }
+
+  /* ─── EYEBROW ─── */
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--zinc-500);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .eyebrow.dim { color: #52525b; }
+
+  /* ─── BODY TEXT ─── */
+  .body-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--zinc-600);
+  }
+  .body-text.muted { color: var(--zinc-400); }
+  .body-text.justified { text-align: justify; }
+
+  /* ─── SECTION WRAP ─── */
+  .section-wrap {
+    max-width: var(--content-max-w);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  /* ─── PROBLEM ─── */
+  .problem {
+    background: #3f3f46;
+    padding: 8rem 3rem;
+    color: var(--white);
+  }
+
+  .problem .eyebrow { color: var(--zinc-400); }
+
+  .problem h2 {
+    font-size: clamp(1.4rem, 2.5vw, 2.1rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    color: var(--white);
+  }
+
+  .problem .body-text { color: var(--zinc-400); }
+
+  /* ─── SOLUTION ─── */
+  .solution {
+    background: var(--black);
+    padding: 8rem 3rem;
+    color: var(--white);
+  }
+
+  .solution-intro { margin-bottom: 4rem; }
+
+  .solution h2 {
+    font-size: clamp(1.4rem, 2.5vw, 2.1rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    color: var(--white);
+  }
+
+  /* ─── PILLARS ─── */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .pillar {
+    background: rgba(24, 24, 27, 0.5);
+    border: 1px solid var(--zinc-800);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: background 0.25s ease, transform 0.25s ease;
+  }
+
+  .pillar:hover {
+    background: rgba(39, 39, 42, 0.8);
+    transform: translateY(-2px);
+  }
+
+  .pillar-icon {
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    width: 22px;
+    height: 22px;
+  }
+
+  .pillar-icon svg { width: 22px; height: 22px; }
+
+  .pillar h3 {
+    font-size: 0.975rem;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: -0.01em;
+  }
+
+  .pillar-body {
+    font-size: 0.875rem;
+    line-height: 1.75;
+    color: var(--zinc-400);
+    text-align: justify;
+    flex: 1;
+  }
+
+  .replaces {
+    font-size: 0.775rem;
+    line-height: 1.5;
+    color: #52525b;
+    border-top: 1px solid var(--zinc-800);
+    padding-top: 0.875rem;
+    margin-top: auto;
+  }
+
+  /* ─── LINKEDIN FAB ─── */
+  .linkedin-fab {
+    position: fixed;
+    bottom: 1.75rem;
+    right: 1.75rem;
+    z-index: 150;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ink);
+    color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .linkedin-fab:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    border-top: 1px solid #e4e4e7;
+    padding: 2rem 3rem;
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+    color: var(--zinc-500);
+  }
+
+  .footer-inner a {
+    color: inherit;
+    transition: color 0.2s;
+  }
+  .footer-inner a:hover { color: var(--ink); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 960px) {
+    .pillars {
+      grid-template-columns: 1fr;
+      max-width: 600px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    #navbar { padding: 0 1.5rem; }
+    .hero { padding: calc(var(--nav-h) + 5rem) 1.5rem 5rem; }
+    .problem, .solution { padding: 5rem 1.5rem; }
+    footer { padding: 1.5rem; }
+    .footer-inner { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
