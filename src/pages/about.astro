@@ -17,58 +17,64 @@ import Footer from '../components/Footer.astro';
     <!-- HERO -->
     <section class="hero">
       <div class="section-wrap">
-        <span class="eyebrow">ABOUT US</span>
-        <h1>Technology consulting<br />for teams that build.</h1>
+        <span class="eyebrow">ABOUT</span>
+        <h1>Complexity is the wind.<br />We are the shelter.</h1>
         <p class="body-text">
-          Sotavento Labs is a technology consulting studio. We partner with
-          engineering teams to design, build, and ship software — from early
-          architecture decisions to hands-on delivery.
+          Sotavento is the leeward side of a sail — where the wind stops pushing
+          and starts pulling you forward. That is how we work: not against the
+          forces shaping your organisation, but with them.
         </p>
       </div>
     </section>
 
-    <!-- WHAT WE DO -->
-    <section class="what-section">
+    <!-- HOW WE WORK -->
+    <section class="how-section">
       <div class="section-wrap">
-        <span class="eyebrow">WHAT WE DO</span>
-        <h2>We work alongside your team, not above it.</h2>
+        <span class="eyebrow">HOW WE WORK</span>
+        <h2>We show up, build what needs to be built, and step away.</h2>
         <p class="body-text">
-          We embed with teams to solve hard engineering problems — infrastructure,
-          system design, delivery process, or whatever is actually blocking
-          progress. We care about the craft and the outcome in equal measure.
+          We help engineering teams understand the full landscape of forces
+          around them. Then we design systems that help them navigate change —
+          while respecting existing team dynamics and organisational structures.
         </p>
         <p class="body-text">
-          Alongside our consulting practice we build our own tools, shaped by
-          problems we keep running into in the field.
+          No rigid frameworks. No long-term dependency. We diagnose before we
+          prescribe, work within real constraints, and leave once the momentum
+          is yours.
         </p>
       </div>
     </section>
 
-    <!-- TEAM -->
-    <section class="team-section">
-      <div class="team-header">
-        <span class="eyebrow">THE TEAM</span>
-        <h2>People</h2>
+    <!-- PILLARS -->
+    <section class="pillars-section">
+      <div class="pillars-header">
+        <span class="eyebrow">WHAT DRIVES US</span>
+        <h2>Three ways we create leverage.</h2>
       </div>
-      <div class="person-grid">
-        <article class="person-card">
-          <div class="person-info">
-            <span class="person-name">Gonzalo Rubio-Casas</span>
-            <span class="person-role">Founder &amp; Engineer</span>
-          </div>
-          <p class="person-bio">
-            Software engineer focused on distributed systems, cloud
-            infrastructure, and developer tooling. Has worked across product
-            companies and consulting engagements throughout Europe.
+      <div class="pillars">
+        <article class="pillar">
+          <h3>We read the wind.</h3>
+          <p class="pillar-body">
+            Deep diagnosis before action. We map the technical, organisational,
+            and market forces at play before recommending anything. Most firms
+            prescribe. We observe first.
           </p>
-          <a
-            href="https://linkedin.com/company/sotavento-labs/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="person-link"
-          >
-            LinkedIn →
-          </a>
+        </article>
+        <article class="pillar">
+          <h3>We reposition the vessel.</h3>
+          <p class="pillar-body">
+            Rather than brute-force transformation: strategic pivots, process
+            realignment, structural redesign. Transformation is not force.
+            It is placement.
+          </p>
+        </article>
+        <article class="pillar">
+          <h3>We create leverage.</h3>
+          <p class="pillar-body">
+            Once positioned correctly, effort multiplies. Competitive insulation,
+            sustainable delivery, energy efficiency — built to last after we
+            have left.
+          </p>
         </article>
       </div>
     </section>
@@ -79,8 +85,8 @@ import Footer from '../components/Footer.astro';
         <span class="eyebrow">GET IN TOUCH</span>
         <h2>Let's talk.</h2>
         <p class="body-text">
-          Whether you're looking for a consulting partner or just want to compare
-          notes, reach out.
+          If you want a partner who reads the situation before acting on it,
+          reach out.
         </p>
         <a href="mailto:hello@sotaventolabs.eu" class="contact-link">
           hello@sotaventolabs.eu →
@@ -96,7 +102,7 @@ import Footer from '../components/Footer.astro';
   <script is:inline>
     gsap.registerPlugin(ScrollTrigger);
 
-    document.querySelectorAll('.hero, .what-section, .team-section, .contact-section, .person-card').forEach((el) => {
+    document.querySelectorAll('.hero, .how-section, .pillars-section, .contact-section, .pillar').forEach((el) => {
       gsap.from(el, {
         opacity: 0,
         y: 30,
@@ -207,26 +213,26 @@ import Footer from '../components/Footer.astro';
     gap: 1.25rem;
   }
 
-  /* ─── WHAT WE DO ─── */
-  .what-section {
+  /* ─── HOW WE WORK ─── */
+  .how-section {
     background: var(--zinc-100);
     padding: 8rem 3rem;
   }
 
-  .what-section h2 {
+  .how-section h2 {
     font-size: clamp(1.6rem, 2.5vw, 2rem);
     font-weight: 600;
     letter-spacing: -0.03em;
     color: var(--ink);
   }
 
-  /* ─── TEAM ─── */
-  .team-section {
+  /* ─── PILLARS ─── */
+  .pillars-section {
     background: var(--white);
     padding: 8rem 3rem;
   }
 
-  .team-header {
+  .pillars-header {
     max-width: var(--content-max-w);
     margin: 0 auto 3rem;
     display: flex;
@@ -234,64 +240,41 @@ import Footer from '../components/Footer.astro';
     gap: 0.5rem;
   }
 
-  .team-header h2 {
+  .pillars-header h2 {
     font-size: clamp(1.6rem, 2.5vw, 2rem);
     font-weight: 600;
     letter-spacing: -0.03em;
     color: var(--ink);
   }
 
-  .person-grid {
+  .pillars {
     max-width: var(--content-max-w);
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2rem;
   }
 
-  .person-card {
-    border: 1px solid #e4e4e7;
-    border-radius: 16px;
-    padding: 2rem;
+  .pillar {
+    border-top: 1px solid #e4e4e7;
+    padding-top: 1.5rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.75rem;
   }
 
-  .person-info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-  }
-
-  .person-name {
+  .pillar h3 {
     font-size: 1rem;
     font-weight: 600;
     color: var(--ink);
     letter-spacing: -0.01em;
   }
 
-  .person-role {
-    font-size: 0.8rem;
-    color: var(--zinc-500);
-    font-weight: 500;
-    letter-spacing: 0.02em;
-  }
-
-  .person-bio {
+  .pillar-body {
     font-size: 0.9rem;
-    line-height: 1.7;
+    line-height: 1.75;
     color: var(--zinc-600);
   }
-
-  .person-link {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--ink);
-    align-self: flex-start;
-    transition: opacity 0.2s;
-  }
-  .person-link:hover { opacity: 0.6; }
 
   /* ─── CONTACT ─── */
   .contact-section {
@@ -319,6 +302,6 @@ import Footer from '../components/Footer.astro';
   @media (max-width: 640px) {
     #navbar { padding: 0 1.5rem; }
     .hero { padding: calc(var(--nav-h) + 5rem) 1.5rem 5rem; }
-    .what-section, .team-section, .contact-section { padding: 5rem 1.5rem; }
+    .how-section, .pillars-section, .contact-section { padding: 5rem 1.5rem; }
   }
 </style>
