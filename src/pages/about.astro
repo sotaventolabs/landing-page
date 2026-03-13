@@ -47,9 +47,9 @@ import Footer from '../components/Footer.astro';
 
     <!-- PILLARS -->
     <section class="pillars-section">
-      <div class="pillars-header">
+      <div class="section-wrap">
         <span class="eyebrow">WHAT DRIVES US</span>
-        <h2>Three ways we create leverage.</h2>
+        <h2 class="pillars-heading">Three ways we create leverage.</h2>
       </div>
       <div class="pillars">
         <article class="pillar">
@@ -144,6 +144,7 @@ import Footer from '../components/Footer.astro';
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     color: var(--ink);
   }
 
@@ -232,15 +233,7 @@ import Footer from '../components/Footer.astro';
     padding: 8rem 3rem;
   }
 
-  .pillars-header {
-    max-width: var(--content-max-w);
-    margin: 0 auto 3rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .pillars-header h2 {
+  .pillars-heading {
     font-size: clamp(1.6rem, 2.5vw, 2rem);
     font-weight: 600;
     letter-spacing: -0.03em;
@@ -248,6 +241,7 @@ import Footer from '../components/Footer.astro';
   }
 
   .pillars {
+    margin-top: 3rem;
     max-width: var(--content-max-w);
     margin: 0 auto;
     display: flex;
