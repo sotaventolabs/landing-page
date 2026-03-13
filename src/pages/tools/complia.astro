@@ -3,11 +3,17 @@ import Layout from '../../layouts/Layout.astro';
 import Footer from '../../components/Footer.astro';
 ---
 
-<Layout title="compl.ia — ISAE 3000 — Sotavento Labs">
+<Layout
+  title="compl.ia · ISAE 3000 · Sotavento Labs"
+  description="compl.ia builds the continuous, verifiable control record that ISAE 3000 Type II requires. When your auditor arrives, the evidence is already there."
+>
+  <!-- Skip to content for keyboard/screen-reader users -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- NAVIGATION -->
-  <nav id="navbar">
-    <a href="/" class="logo">
-      <img src="/logo.png" alt="" class="logo-img" />
+  <nav id="navbar" aria-label="Main navigation">
+    <a href="/" class="logo" aria-label="Sotavento Labs — home">
+      <img src="/logo.png" alt="Sotavento Labs logo" class="logo-img" />
       Sotavento Labs
     </a>
     <div class="nav-right">
@@ -16,15 +22,15 @@ import Footer from '../../components/Footer.astro';
     </div>
   </nav>
 
-  <main>
+  <main id="main-content">
     <!-- HERO — Soft Grey -->
     <section id="hero" class="hero">
       <div class="section-wrap">
         <span class="eyebrow">ANALYSIS GAP FOR ISAE 3000</span>
         <h1>Your Audit Window Is Fixed.<br />Your Evidence Gap Isn't.</h1>
-        <p class="body-text justified">
+        <p class="body-text">
           Sotavento Labs builds the continuous, verifiable control record that
-          ISAE 3000 Type II requires — so when your auditor arrives, the evidence
+          ISAE 3000 Type II requires. When your auditor arrives, the evidence
           is already there.
         </p>
       </div>
@@ -35,9 +41,9 @@ import Footer from '../../components/Footer.astro';
       <div class="section-wrap">
         <span class="eyebrow">THE CONSULTING MODEL PROBLEM</span>
         <h2>Traditional Consulting Was Built for a Different Era of Compliance.</h2>
-        <p class="body-text justified">
+        <p class="body-text">
           ISAE 3000 Type II requires 12 months of continuous, verifiable control operation.
-          A 10-week consulting engagement cannot produce that — it can only describe it.
+          A 10-week consulting engagement cannot produce that. It can only describe it.
           Auditors know the difference.
         </p>
       </div>
@@ -46,9 +52,9 @@ import Footer from '../../components/Footer.astro';
     <!-- SOLUTION — Black -->
     <section id="solution" class="solution">
       <div class="section-wrap solution-intro">
-        <span class="eyebrow dim">HOW SOTAVENTO LABS WORKS</span>
+        <span class="eyebrow">HOW SOTAVENTO LABS WORKS</span>
         <h2>Built for the Way ISAE 3000 Is Actually Audited.</h2>
-        <p class="body-text muted justified">
+        <p class="body-text muted">
           Three integrated capabilities that replace the consulting cycle with a
           continuous, auditor-ready control record.
         </p>
@@ -60,7 +66,7 @@ import Footer from '../../components/Footer.astro';
           </span>
           <h3>Continuous Evidence Capture</h3>
           <p class="pillar-body">
-            Controls are documented at the moment they operate — not reconstructed
+            Controls are documented at the moment they operate, not reconstructed
             weeks before your audit window. System logs, access records, policy
             acknowledgements, and operational artifacts are captured, timestamped,
             and mapped automatically.
@@ -76,7 +82,7 @@ import Footer from '../../components/Footer.astro';
           </span>
           <h3>Criteria Mapping</h3>
           <p class="pillar-body">
-            Every control is mapped to the ISAE 3000 framework and COSO domains — Control
+            Every control is mapped to the ISAE 3000 framework and COSO domains: Control
             Environment, Risk Assessment, Control Activities, Information &amp; Communication,
             Monitoring. Gaps are surfaced before your auditor finds them.
           </p>
@@ -92,7 +98,7 @@ import Footer from '../../components/Footer.astro';
           <h3>Practitioner Portal</h3>
           <p class="pillar-body">
             Your ISAE 3000 practitioner accesses a structured, evidence-linked readiness
-            view — no briefing cycles, no file transfers, no interpretation gaps. The
+            view: no briefing cycles, no file transfers, no interpretation gaps. The
             evidence speaks directly to the criteria.
           </p>
           <p class="replaces">
@@ -112,21 +118,23 @@ import Footer from '../../components/Footer.astro';
   <script is:inline>
     lucide.createIcons();
 
-    gsap.registerPlugin(ScrollTrigger);
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      gsap.registerPlugin(ScrollTrigger);
 
-    document.querySelectorAll('.hero, .section-wrap, .pillar').forEach((el) => {
-      gsap.from(el, {
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 85%',
-          toggleActions: 'play none none none',
-        },
+      document.querySelectorAll('.hero, .section-wrap, .pillar').forEach((el) => {
+        gsap.from(el, {
+          opacity: 0,
+          y: 30,
+          duration: 0.8,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+          },
+        });
       });
-    });
+    }
 
     const navbar = document.getElementById('navbar');
     const solutionEl = document.getElementById('solution');
@@ -153,6 +161,21 @@ import Footer from '../../components/Footer.astro';
     --nav-h: 72px;
     --content-max-w: 680px;
   }
+
+  /* ─── SKIP LINK ─── */
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 200;
+    padding: 0.5rem 1rem;
+    background: var(--ink);
+    color: #fff;
+    font-size: 0.875rem;
+    border-radius: 0 0 6px 6px;
+    transition: top 0.15s;
+  }
+  .skip-link:focus { top: 0; }
 
   /* ─── NAV ─── */
   #navbar {
@@ -186,6 +209,11 @@ import Footer from '../../components/Footer.astro';
     color: inherit;
     text-decoration: none;
   }
+  .logo:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
 
   .logo-img {
     height: 32px;
@@ -211,8 +239,17 @@ import Footer from '../../components/Footer.astro';
     color: inherit;
     opacity: 0.65;
     transition: opacity 0.2s;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
   }
   .back-link:hover { opacity: 1; }
+  .back-link:focus-visible {
+    opacity: 1;
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
 
   /* ─── HERO ─── */
   .hero {
@@ -238,7 +275,6 @@ import Footer from '../../components/Footer.astro';
     text-transform: uppercase;
     margin-bottom: 0.5rem;
   }
-  .eyebrow.dim { color: #52525b; }
 
   /* ─── BODY TEXT ─── */
   .body-text {
@@ -246,8 +282,8 @@ import Footer from '../../components/Footer.astro';
     line-height: 1.7;
     color: var(--zinc-600);
   }
+  /* #a1a1aa on black = 8.5:1 — passes WCAG AA */
   .body-text.muted { color: var(--zinc-400); }
-  .body-text.justified { text-align: justify; }
 
   /* ─── SECTION WRAP ─── */
   .section-wrap {
@@ -265,7 +301,8 @@ import Footer from '../../components/Footer.astro';
     color: var(--white);
   }
 
-  .problem .eyebrow { color: var(--zinc-400); }
+  /* #a1a1aa on #3f3f46 = 4.35:1 — passes for large text (18px+/14px bold+); eyebrow is small so use white */
+  .problem .eyebrow { color: var(--white); opacity: 0.6; }
 
   .problem h2 {
     font-size: clamp(1.4rem, 2.5vw, 2.1rem);
@@ -285,6 +322,9 @@ import Footer from '../../components/Footer.astro';
   }
 
   .solution-intro { margin-bottom: 4rem; }
+
+  /* #a1a1aa on black = 8.5:1 — passes */
+  .solution .eyebrow { color: var(--zinc-400); }
 
   .solution h2 {
     font-size: clamp(1.4rem, 2.5vw, 2.1rem);
@@ -339,15 +379,16 @@ import Footer from '../../components/Footer.astro';
   .pillar-body {
     font-size: 0.875rem;
     line-height: 1.75;
+    /* #a1a1aa on black pillar bg ≈ 8.5:1 — passes WCAG AA */
     color: var(--zinc-400);
-    text-align: justify;
     flex: 1;
   }
 
+  /* Was #52525b on black = 2.66:1 (fail). Now #808080 on black = 5.3:1 (pass) */
   .replaces {
     font-size: 0.775rem;
     line-height: 1.5;
-    color: #52525b;
+    color: #808080;
     border-top: 1px solid var(--zinc-800);
     padding-top: 0.875rem;
     margin-top: auto;
