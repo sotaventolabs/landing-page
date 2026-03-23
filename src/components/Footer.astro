@@ -1,18 +1,10 @@
 ---
 ---
 
-<script is:inline>
-  document.getElementById('cookie-prefs').addEventListener('click', function () {
-    localStorage.removeItem('sl_cookie_consent');
-    window.location.reload();
-  });
-</script>
-
 <footer>
   <div class="footer-inner">
     <span>&copy; {new Date().getFullYear()} Sotavento Labs</span>
     <div class="footer-contacts">
-      <button id="cookie-prefs" class="footer-cookie-btn">Cookie preferences</button>
       <a href="mailto:hello@sotaventolabs.eu">hello@sotaventolabs.eu</a>
       <a
         href="https://linkedin.com/company/sotavento-labs/"
@@ -67,25 +59,6 @@
 
   .footer-linkedin {
     gap: 0.4rem;
-  }
-
-  .footer-cookie-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 0.875rem;
-    color: #71717a;
-    padding: 0;
-    min-height: 44px;
-    transition: color 0.2s;
-  }
-  .footer-cookie-btn:hover { color: #1d1d1f; }
-  .footer-cookie-btn:focus-visible {
-    color: #1d1d1f;
-    outline: 2px solid #1d1d1f;
-    outline-offset: 3px;
-    border-radius: 3px;
   }
 
   @media (max-width: 640px) {
