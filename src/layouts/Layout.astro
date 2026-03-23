@@ -1,5 +1,5 @@
 ---
-import Analytics from '@vercel/analytics/astro';
+import CookieBanner from '../components/CookieBanner.astro';
 
 interface Props {
 	title?: string;
@@ -23,12 +23,10 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://sotaventolabs.eu');
 		<link rel="canonical" href={canonicalURL} />
 		<title>{title}</title>
 		<meta name="description" content={description} />
-
-		<script type="text/javascript" src="//web.telemetric.dk/t/f12a7a97-9df3-4826-8f70-0b946fbe6881/bm.js" async="async"></script>
 	</head>
 	<body>
 		<slot />
-		<Analytics />
+		<CookieBanner />
 	</body>
 </html>
 
