@@ -1,0 +1,456 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+
+const LAST_UPDATED = '27 March 2026';
+---
+
+<Layout
+  title="Privacy Policy · Sotavento Labs"
+  description="How Sotavento Labs collects, uses, and protects your personal data."
+>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <nav id="navbar" aria-label="Main navigation">
+    <a href="/" class="logo" aria-label="Sotavento Labs — home">
+      <img src="/logo.png" alt="Sotavento Labs logo" class="logo-img" />
+      Sotavento Labs
+    </a>
+    <a href="/" class="back-link">← Back</a>
+  </nav>
+
+  <main id="main-content">
+    <section class="hero">
+      <div class="section-wrap">
+        <span class="eyebrow">LEGAL</span>
+        <h1>Privacy Policy</h1>
+        <p class="meta">Last updated: {LAST_UPDATED}</p>
+        <p class="body-text">
+          This policy explains what personal data Sotavento Labs SLU collects, why,
+          and how we protect it. We are committed to processing personal data in
+          compliance with Regulation (EU) 2016/679 (GDPR) and applicable Spanish
+          data protection law (LOPDGDD).
+        </p>
+      </div>
+    </section>
+
+    <section class="doc-section">
+      <div class="section-wrap">
+        <span class="eyebrow">1. DATA CONTROLLER</span>
+        <div class="doc-body">
+          <p>The data controller for personal data processed through this website is:</p>
+          <div class="info-block">
+            <p><strong>Sotavento Labs SLU</strong></p>
+            <p>CIF: B26692848</p>
+            <p>Calle Valderribas 14, Planta Primera Puerta A</p>
+            <p>28007 Madrid, Spain</p>
+            <p>Contact: <a href="mailto:hello@sotaventolabs.eu">hello@sotaventolabs.eu</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section alt">
+      <div class="section-wrap">
+        <span class="eyebrow">2. DATA WE COLLECT AND WHY</span>
+        <div class="doc-body">
+
+          <h3>2.1 Website visitors — analytics</h3>
+          <p>When you visit <strong>sotaventolabs.eu</strong> and accept cookies, we collect usage data (pages visited, session duration, referrer, device type) via two analytics providers:</p>
+          <ul>
+            <li><strong><a href="https://bmetric.com" target="_blank" rel="noopener noreferrer">bmetric</a></strong></li>
+            <li><strong>Vercel Analytics</strong></li>
+          </ul>
+          <p>None of these providers use cross-site tracking cookies. Analytics are only loaded after you give consent via our cookie banner.</p>
+          <p class="legal-basis"><strong>Legal basis:</strong> Consent (Art. 6(1)(a) GDPR). You can withdraw consent at any time using the cookie preference button at the bottom of the page.</p>
+
+          <h3>2.2 Contact form</h3>
+          <p>When you submit our contact form, we collect your <strong>name</strong>, <strong>email address</strong>, and optionally your <strong>phone number</strong>. We use this information solely to respond to your enquiry.</p>
+          <p class="legal-basis"><strong>Legal basis:</strong> Legitimate interest (Art. 6(1)(f) GDPR) — responding to a request you initiated.</p>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section">
+      <div class="section-wrap">
+        <span class="eyebrow">3. COOKIES</span>
+        <div class="doc-body">
+          <p>We use a single category of cookies:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Cookie</th>
+                <th>Purpose</th>
+                <th>Duration</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>sl_cookie_consent</code></td>
+                <td>Stores your analytics consent preference (localStorage)</td>
+                <td>Until you clear browser storage</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>Analytics providers may set their own first-party cookies once consent is given. We do not use advertising, remarketing, or profiling cookies.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section alt">
+      <div class="section-wrap">
+        <span class="eyebrow">4. THIRD PARTIES AND SUB-PROCESSORS</span>
+        <div class="doc-body">
+          <p>We share personal data only with the following categories of recipients, and only to the extent necessary:</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Provider</th>
+                <th>Purpose</th>
+                <th>Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong><a href="https://bmetric.com" target="_blank" rel="noopener noreferrer">bmetric</a></strong></td>
+                <td>Website analytics (with consent)</td>
+                <td>EU (Denmark)</td>
+              </tr>
+              <tr>
+                <td><strong>Vercel Inc.</strong></td>
+                <td>Hosting and web analytics</td>
+                <td>EU region</td>
+              </tr>
+              <tr>
+                <td><strong>Holded Technologies SL</strong></td>
+                <td>Invoicing and accounting (billing data only)</td>
+                <td>EU (Spain)</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>All providers are either established in the EU or offer GDPR-compliant data processing agreements. We do not sell personal data to third parties.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section">
+      <div class="section-wrap">
+        <span class="eyebrow">5. INTERNATIONAL TRANSFERS</span>
+        <div class="doc-body">
+          <p>All primary infrastructure is hosted within the European Economic Area. Where any provider processes data outside the EEA, we ensure adequate safeguards are in place (Standard Contractual Clauses or equivalent adequacy decisions) before any transfer occurs.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section alt">
+      <div class="section-wrap">
+        <span class="eyebrow">6. DATA RETENTION</span>
+        <div class="doc-body">
+          <p>We retain personal data only as long as necessary for the purpose for which it was collected:</p>
+          <ul>
+            <li><strong>Analytics data:</strong> retained per each provider's policy (typically 13 months or less).</li>
+            <li><strong>Contact form submissions:</strong> retained for up to 2 years after the last correspondence, then deleted.</li>
+            <li><strong>Invoicing and tax records:</strong> retained for 6 years as required by Spanish tax law.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section">
+      <div class="section-wrap">
+        <span class="eyebrow">7. YOUR RIGHTS</span>
+        <div class="doc-body">
+          <p>Under the GDPR, you have the following rights regarding your personal data:</p>
+          <ul>
+            <li><strong>Access</strong> — request a copy of the data we hold about you.</li>
+            <li><strong>Rectification</strong> — ask us to correct inaccurate or incomplete data.</li>
+            <li><strong>Erasure</strong> — request deletion of your data where there is no lawful reason to retain it.</li>
+            <li><strong>Restriction</strong> — ask us to pause processing in certain circumstances.</li>
+            <li><strong>Portability</strong> — receive your data in a structured, machine-readable format.</li>
+            <li><strong>Objection</strong> — object to processing based on legitimate interests.</li>
+            <li><strong>Withdraw consent</strong> — where processing is based on consent, withdraw it at any time without affecting the lawfulness of prior processing.</li>
+          </ul>
+          <p>To exercise any of these rights, contact us at <a href="mailto:hello@sotaventolabs.eu">hello@sotaventolabs.eu</a>. We will respond within 30 days. If you are unsatisfied with our response, you have the right to lodge a complaint with the <strong>Agencia Española de Protección de Datos (AEPD)</strong> at <a href="https://www.aepd.es" target="_blank" rel="noopener noreferrer">www.aepd.es</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section alt">
+      <div class="section-wrap">
+        <span class="eyebrow">8. SECURITY</span>
+        <div class="doc-body">
+          <p>We implement appropriate technical and organisational measures to protect personal data against unauthorised access, loss, or disclosure. These include encryption in transit (TLS), access controls, and regular security reviews. No system is completely immune to risk; we will notify affected individuals and the competent supervisory authority in the event of a data breach as required by law.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section">
+      <div class="section-wrap">
+        <span class="eyebrow">9. CHANGES TO THIS POLICY</span>
+        <div class="doc-body">
+          <p>We may update this Privacy Policy from time to time. Material changes will be notified by updating the "Last updated" date at the top of this page. Continued use of our services after changes are published constitutes acceptance of the updated policy.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section alt">
+      <div class="section-wrap">
+        <span class="eyebrow">10. CONTACT</span>
+        <div class="doc-body">
+          <p>For any privacy-related questions or to exercise your rights:</p>
+          <div class="info-block">
+            <p><strong>Sotavento Labs SLU</strong></p>
+            <p>Calle Valderribas 14, Planta Primera Puerta A, 28007 Madrid, Spain</p>
+            <p><a href="mailto:hello@sotaventolabs.eu">hello@sotaventolabs.eu</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  :root {
+    --white: #ffffff;
+    --zinc-100: #f4f4f5;
+    --zinc-400: #a1a1aa;
+    --zinc-500: #71717a;
+    --zinc-600: #52525b;
+    --zinc-800: #27272a;
+    --ink: #1d1d1f;
+    --nav-h: 72px;
+    --content-max-w: 680px;
+  }
+
+  /* ─── SKIP LINK ─── */
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 200;
+    padding: 0.5rem 1rem;
+    background: var(--ink);
+    color: #fff;
+    font-size: 0.875rem;
+    border-radius: 0 0 6px 6px;
+    transition: top 0.15s;
+  }
+  .skip-link:focus { top: 0; }
+
+  /* ─── NAV ─── */
+  #navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    height: var(--nav-h);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    color: var(--ink);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.975rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: inherit;
+    text-decoration: none;
+  }
+  .logo:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  .logo-img {
+    height: 32px;
+    width: auto;
+    display: block;
+  }
+
+  .back-link {
+    font-size: 0.875rem;
+    color: inherit;
+    opacity: 0.65;
+    transition: opacity 0.2s;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .back-link:hover { opacity: 1; }
+  .back-link:focus-visible {
+    opacity: 1;
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    background: var(--white);
+    padding: calc(var(--nav-h) + 6rem) 3rem 5rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    color: var(--ink);
+  }
+
+  .meta {
+    font-size: 0.8rem;
+    color: var(--zinc-400);
+    margin-top: -0.25rem;
+  }
+
+  /* ─── EYEBROW ─── */
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--zinc-500);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  /* ─── BODY TEXT ─── */
+  .body-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--zinc-600);
+  }
+
+  /* ─── SECTION WRAP ─── */
+  .section-wrap {
+    max-width: var(--content-max-w);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* ─── DOC SECTIONS ─── */
+  .doc-section {
+    background: var(--white);
+    padding: 4rem 3rem;
+    border-top: 1px solid #e4e4e7;
+  }
+
+  .doc-section.alt {
+    background: var(--zinc-100);
+  }
+
+  .doc-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .doc-body h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin-top: 0.5rem;
+  }
+
+  .doc-body p,
+  .doc-body li {
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: var(--zinc-600);
+  }
+
+  .doc-body ul {
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .doc-body a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .doc-body a:hover { opacity: 0.7; }
+
+  .legal-basis {
+    background: rgba(0,0,0,0.03);
+    border-left: 3px solid #e4e4e7;
+    padding: 0.75rem 1rem;
+    border-radius: 0 4px 4px 0;
+    font-size: 0.85rem !important;
+  }
+
+  .info-block {
+    background: rgba(0,0,0,0.03);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .info-block p {
+    font-size: 0.875rem !important;
+    line-height: 1.6 !important;
+    color: var(--zinc-600);
+  }
+
+  /* ─── TABLE ─── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    color: var(--zinc-600);
+  }
+
+  th {
+    text-align: left;
+    font-weight: 600;
+    color: var(--ink);
+    padding: 0.6rem 0.75rem;
+    background: rgba(0,0,0,0.04);
+    border-bottom: 2px solid #e4e4e7;
+  }
+
+  td {
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid #e4e4e7;
+    line-height: 1.5;
+  }
+
+  tr:last-child td { border-bottom: none; }
+
+  code {
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.8rem;
+    background: rgba(0,0,0,0.05);
+    padding: 0.1em 0.35em;
+    border-radius: 3px;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 640px) {
+    #navbar { padding: 0 1.5rem; }
+    .hero { padding: calc(var(--nav-h) + 4rem) 1.5rem 4rem; }
+    .doc-section { padding: 3rem 1.5rem; }
+    table { font-size: 0.78rem; }
+    th, td { padding: 0.5rem; }
+  }
+</style>
