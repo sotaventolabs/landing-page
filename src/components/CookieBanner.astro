@@ -25,13 +25,6 @@
     var CONSENT_KEY = 'sl_cookie_consent';
 
     function loadAnalytics() {
-      // Telemetric
-      var telemetric = document.createElement('script');
-      telemetric.src =
-        '//web.telemetric.dk/t/f12a7a97-9df3-4826-8f70-0b946fbe6881/bm.js';
-      telemetric.async = true;
-      document.head.appendChild(telemetric);
-
       // Vercel Analytics
       var va = document.createElement('script');
       va.src = '/_vercel/insights/script.js';
