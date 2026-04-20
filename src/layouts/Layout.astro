@@ -19,6 +19,7 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://sotaventolabs.eu');
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" type="image/png" href="/logo.png" />
 		<link rel="canonical" href={canonicalURL} />
 		<title>{title}</title>
@@ -39,22 +40,144 @@ const canonicalURL = new URL(Astro.url.pathname, 'https://sotaventolabs.eu');
 		box-sizing: border-box;
 	}
 
+	:root {
+		/* Zinc scale */
+		--white:    #ffffff;
+		--zinc-50:  #fafafa;
+		--zinc-100: #f4f4f5;
+		--zinc-200: #e4e4e7;
+		--zinc-300: #d4d4d8;
+		--zinc-400: #a1a1aa;
+		--zinc-500: #71717a;
+		--zinc-600: #52525b;
+		--zinc-700: #3f3f46;
+		--zinc-800: #27272a;
+		--zinc-900: #18181b;
+		--black:    #000000;
+
+		/* Brand surfaces */
+		--ink:         #1d1d1f;
+		--canvas:      #fbfbfd;
+		--surface:     #ffffff;
+		--surface-2:   #f4f4f5;
+		--surface-ink: #000000;
+		--surface-ash: #3f3f46;
+
+		/* Semantic foreground */
+		--fg-1:      var(--ink);
+		--fg-2:      var(--zinc-600);
+		--fg-3:      var(--zinc-500);
+		--fg-4:      var(--zinc-400);
+		--fg-inverse: var(--white);
+
+		/* Borders */
+		--border-1:    #e4e4e7;
+		--border-2:    #d4d4d8;
+		--border-dark: var(--zinc-800);
+
+		/* Focus */
+		--focus-ring: var(--ink);
+
+		/* Radii */
+		--radius-xs:  3px;
+		--radius-sm:  4px;
+		--radius-md:  6px;
+		--radius:     8px;
+		--radius-lg:  12px;
+		--radius-xl:  14px;
+		--radius-2xl: 16px;
+
+		/* Shadows */
+		--shadow-xs: 0 2px 8px rgba(0, 0, 0, 0.08);
+		--shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.06);
+		--shadow-md: 0 8px 30px rgba(0, 0, 0, 0.08);
+		--shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.20);
+
+		/* Spacing (8-point) */
+		--space-1:  4px;
+		--space-2:  8px;
+		--space-3:  12px;
+		--space-4:  16px;
+		--space-5:  24px;
+		--space-6:  32px;
+		--space-7:  48px;
+		--space-8:  64px;
+		--space-9:  96px;
+		--space-10: 128px;
+
+		/* Layout */
+		--nav-h:         72px;
+		--content-max-w: 680px;
+		--wide-max-w:    1100px;
+		--page-pad-x:    3rem;
+		--page-pad-x-sm: 1.5rem;
+
+		/* Glass */
+		--glass-bg-light: rgba(255, 255, 255, 0.80);
+		--glass-bg-dark:  rgba(0, 0, 0, 0.80);
+		--glass-blur:     blur(12px);
+		--hairline-light: 1px solid rgba(0, 0, 0, 0.06);
+
+		/* Motion */
+		--ease-out:  cubic-bezier(0.22, 1, 0.36, 1);
+		--dur-fast:  0.15s;
+		--dur:       0.25s;
+		--dur-slow:  0.40s;
+		--dur-enter: 0.80s;
+
+		/* Typography */
+		--font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Display',
+		             'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+		--font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+
+		--fw-regular:  400;
+		--fw-medium:   500;
+		--fw-semibold: 600;
+
+		--fs-eyebrow:    0.68rem;
+		--fs-micro:      0.775rem;
+		--fs-caption:    0.875rem;
+		--fs-body:       1rem;
+		--fs-card-title: 1rem;
+		--fs-h2-min:     1.6rem;
+		--fs-h2-max:     2rem;
+		--fs-h1-min:     2rem;
+		--fs-h1-max:     3rem;
+
+		--tracking-eyebrow:  0.12em;
+		--tracking-tag:      0.10em;
+		--tracking-tight:    -0.03em;
+		--tracking-snug:     -0.02em;
+		--tracking-tightish: -0.01em;
+
+		--lh-display: 1.10;
+		--lh-title:   1.20;
+		--lh-body:    1.70;
+		--lh-cramped: 1.30;
+		--lh-tight:   1.50;
+	}
+
 	html {
-		font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display',
-			'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+		font-family: var(--font-sans);
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
 
 	body {
 		min-height: 100vh;
-		color: #1d1d1f;
-		background: #fbfbfd;
+		color: var(--fg-1);
+		background: var(--canvas);
 	}
 
 	a {
 		color: inherit;
 		text-decoration: none;
+	}
+
+	*:focus-visible {
+		outline: 2px solid currentColor;
+		outline-offset: 3px;
+		border-radius: var(--radius-xs);
 	}
 
 	/* Respect reduced motion — CSS transitions */

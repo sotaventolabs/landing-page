@@ -13,7 +13,7 @@ import Footer from '../../components/Footer.astro';
   <!-- NAVIGATION -->
   <nav id="navbar" aria-label="Main navigation">
     <a href="/" class="logo" aria-label="Sotavento Labs — home">
-      <img src="/logo.png" alt="Sotavento Labs logo" class="logo-img" />
+      <img src="/logo.svg" alt="Sotavento Labs logo" class="logo-img" />
       Sotavento Labs
     </a>
     <div class="nav-right">
@@ -149,31 +149,18 @@ import Footer from '../../components/Footer.astro';
 </Layout>
 
 <style>
-  :root {
-    --white: #ffffff;
-    --zinc-100: #f4f4f5;
-    --zinc-400: #a1a1aa;
-    --zinc-500: #71717a;
-    --zinc-600: #52525b;
-    --zinc-800: #27272a;
-    --black: #000000;
-    --ink: #1d1d1f;
-    --nav-h: 72px;
-    --content-max-w: 680px;
-  }
-
   /* ─── SKIP LINK ─── */
   .skip-link {
     position: absolute;
     top: -100%;
-    left: 1rem;
+    left: var(--space-4);
     z-index: 200;
-    padding: 0.5rem 1rem;
+    padding: var(--space-2) var(--space-4);
     background: var(--ink);
-    color: #fff;
-    font-size: 0.875rem;
-    border-radius: 0 0 6px 6px;
-    transition: top 0.15s;
+    color: var(--fg-inverse);
+    font-size: var(--fs-caption);
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    transition: top var(--dur-fast);
   }
   .skip-link:focus { top: 0; }
 
@@ -185,34 +172,29 @@ import Footer from '../../components/Footer.astro';
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 3rem;
+    padding: 0 var(--page-pad-x);
     height: var(--nav-h);
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    color: var(--ink);
-    transition: background 0.4s ease, color 0.4s ease;
+    background: var(--glass-bg-light);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    color: var(--fg-1);
+    transition: background var(--dur-slow) ease, color var(--dur-slow) ease;
   }
 
   #navbar.nav-dark {
-    background: rgba(0, 0, 0, 0.8);
-    color: var(--white);
+    background: var(--glass-bg-dark);
+    color: var(--fg-inverse);
   }
 
   .logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: var(--space-2);
     font-size: 0.975rem;
-    font-weight: 600;
-    letter-spacing: -0.02em;
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--tracking-snug);
     color: inherit;
     text-decoration: none;
-  }
-  .logo:focus-visible {
-    outline: 2px solid currentColor;
-    outline-offset: 3px;
-    border-radius: 3px;
   }
 
   .logo-img {
@@ -224,18 +206,18 @@ import Footer from '../../components/Footer.astro';
   .nav-right {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: var(--space-5);
   }
 
   .nav-product {
-    font-size: 0.875rem;
-    font-weight: 600;
-    letter-spacing: -0.01em;
+    font-size: var(--fs-caption);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--tracking-tightish);
     color: inherit;
   }
 
   .back-link {
-    font-size: 0.875rem;
+    font-size: var(--fs-caption);
     color: inherit;
     opacity: 0.65;
     transition: opacity 0.2s;
@@ -244,46 +226,40 @@ import Footer from '../../components/Footer.astro';
     min-height: 44px;
   }
   .back-link:hover { opacity: 1; }
-  .back-link:focus-visible {
-    opacity: 1;
-    outline: 2px solid currentColor;
-    outline-offset: 3px;
-    border-radius: 3px;
-  }
 
   /* ─── HERO ─── */
   .hero {
-    background: var(--zinc-100);
-    padding: calc(var(--nav-h) + 8rem) 3rem 8rem;
+    background: var(--surface-2);
+    padding: calc(var(--nav-h) + var(--space-10)) var(--page-pad-x) var(--space-10);
   }
 
   .hero h1 {
     font-size: clamp(1.6rem, 3vw, 2.4rem);
-    font-weight: 600;
-    letter-spacing: -0.03em;
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--tracking-tight);
     line-height: 1.15;
-    color: var(--ink);
+    color: var(--fg-1);
   }
 
   /* ─── EYEBROW ─── */
   .eyebrow {
     display: inline-block;
-    font-size: 0.68rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    color: var(--zinc-500);
+    font-size: var(--fs-eyebrow);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--tracking-eyebrow);
+    color: var(--fg-3);
     text-transform: uppercase;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--space-2);
   }
 
   /* ─── BODY TEXT ─── */
   .body-text {
-    font-size: 1rem;
-    line-height: 1.7;
-    color: var(--zinc-600);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    color: var(--fg-2);
   }
   /* #a1a1aa on black = 8.5:1 — passes WCAG AA */
-  .body-text.muted { color: var(--zinc-400); }
+  .body-text.muted { color: var(--fg-4); }
 
   /* ─── SECTION WRAP ─── */
   .section-wrap {
@@ -296,62 +272,62 @@ import Footer from '../../components/Footer.astro';
 
   /* ─── PROBLEM ─── */
   .problem {
-    background: #3f3f46;
-    padding: 8rem 3rem;
-    color: var(--white);
+    background: var(--surface-ash);
+    padding: var(--space-10) var(--page-pad-x);
+    color: var(--fg-inverse);
   }
 
   /* #a1a1aa on #3f3f46 = 4.35:1 — passes for large text (18px+/14px bold+); eyebrow is small so use white */
-  .problem .eyebrow { color: var(--white); opacity: 0.6; }
+  .problem .eyebrow { color: var(--fg-inverse); opacity: 0.6; }
 
   .problem h2 {
     font-size: clamp(1.4rem, 2.5vw, 2.1rem);
-    font-weight: 600;
-    letter-spacing: -0.03em;
-    line-height: 1.2;
-    color: var(--white);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--tracking-tight);
+    line-height: var(--lh-title);
+    color: var(--fg-inverse);
   }
 
-  .problem .body-text { color: var(--zinc-400); }
+  .problem .body-text { color: var(--fg-4); }
 
   /* ─── SOLUTION ─── */
   .solution {
-    background: var(--black);
-    padding: 8rem 3rem;
-    color: var(--white);
+    background: var(--surface-ink);
+    padding: var(--space-10) var(--page-pad-x);
+    color: var(--fg-inverse);
   }
 
-  .solution-intro { margin-bottom: 4rem; }
+  .solution-intro { margin-bottom: var(--space-8); }
 
   /* #a1a1aa on black = 8.5:1 — passes */
-  .solution .eyebrow { color: var(--zinc-400); }
+  .solution .eyebrow { color: var(--fg-4); }
 
   .solution h2 {
     font-size: clamp(1.4rem, 2.5vw, 2.1rem);
-    font-weight: 600;
-    letter-spacing: -0.03em;
-    line-height: 1.2;
-    color: var(--white);
+    font-weight: var(--fw-semibold);
+    letter-spacing: var(--tracking-tight);
+    line-height: var(--lh-title);
+    color: var(--fg-inverse);
   }
 
   /* ─── PILLARS ─── */
   .pillars {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    max-width: 1100px;
+    gap: var(--space-5);
+    max-width: var(--wide-max-w);
     margin: 0 auto;
   }
 
   .pillar {
     background: rgba(24, 24, 27, 0.5);
-    border: 1px solid var(--zinc-800);
-    border-radius: 12px;
-    padding: 2rem;
+    border: 1px solid var(--border-dark);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    transition: background 0.25s ease, transform 0.25s ease;
+    gap: var(--space-4);
+    transition: background var(--dur) ease, transform var(--dur) ease;
   }
 
   .pillar:hover {
@@ -360,7 +336,7 @@ import Footer from '../../components/Footer.astro';
   }
 
   .pillar-icon {
-    color: var(--white);
+    color: var(--fg-inverse);
     display: flex;
     align-items: center;
     width: 22px;
@@ -371,25 +347,25 @@ import Footer from '../../components/Footer.astro';
 
   .pillar h3 {
     font-size: 0.975rem;
-    font-weight: 600;
-    color: var(--white);
-    letter-spacing: -0.01em;
+    font-weight: var(--fw-semibold);
+    color: var(--fg-inverse);
+    letter-spacing: var(--tracking-tightish);
   }
 
   .pillar-body {
-    font-size: 0.875rem;
+    font-size: var(--fs-caption);
     line-height: 1.75;
     /* #a1a1aa on black pillar bg ≈ 8.5:1 — passes WCAG AA */
-    color: var(--zinc-400);
+    color: var(--fg-4);
     flex: 1;
   }
 
   /* Was #52525b on black = 2.66:1 (fail). Now #808080 on black = 5.3:1 (pass) */
   .replaces {
-    font-size: 0.775rem;
-    line-height: 1.5;
+    font-size: var(--fs-micro);
+    line-height: var(--lh-tight);
     color: #808080;
-    border-top: 1px solid var(--zinc-800);
+    border-top: 1px solid var(--border-dark);
     padding-top: 0.875rem;
     margin-top: auto;
   }
@@ -403,8 +379,8 @@ import Footer from '../../components/Footer.astro';
   }
 
   @media (max-width: 640px) {
-    #navbar { padding: 0 1.5rem; }
-    .hero { padding: calc(var(--nav-h) + 5rem) 1.5rem 5rem; }
-    .problem, .solution { padding: 5rem 1.5rem; }
+    #navbar { padding: 0 var(--page-pad-x-sm); }
+    .hero { padding: calc(var(--nav-h) + 5rem) var(--page-pad-x-sm) 5rem; }
+    .problem, .solution { padding: 5rem var(--page-pad-x-sm); }
   }
 </style>
