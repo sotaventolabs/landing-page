@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",
-    "astro": "^5.17.1"
+    "astro": "^5.17.1",
+    "gsap": "^3.15.1",
+    "lucide": "^1.75.0"
   }
 }
